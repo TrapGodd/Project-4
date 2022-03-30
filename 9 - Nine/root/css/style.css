@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --supporter-button__active-clr: #dadc2b;
+  --hdr-clr: #101721;
+  --change-clr: #1bc780;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: black;
+}
+
+input {
+  display: block;
+  background: black;
+  color: #282823;
+  border: none;
+}
+
+.input-1 {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-2 {
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  background: #1a1923;
+  width: 18rem;
+  position: fixed;
+  top: 3.8rem;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+span {
+  background-color: #dadc2b;
+  color: black;
+  padding: 0.2rem;
+  font-size: 0.7em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.title,
+.text,
+.supporter {
+  color: white;
+}
+
+.text {
+  font-size: 0.9rem;
+}
+
+.supporter {
+  padding: 1rem;
+  margin-top: auto;
+  background-color: #0c0c0e;
+  border-top: 3px solid #e6e76c;
+}
+
+.supporter * {
+  margin: 0 0 0 1rem;
+}
+
+.supporter-button__active {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  white-space: nowrap;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background: var(--supporter-button__active-clr);
+}
+
+nav {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  background-color: var(--hdr-clr);
+  top: 0;
+  left: 0rem;
+  right: 0;
+  color: white;
+
+  z-index: 1000;
+}
+
+.header * {
+  display: inline-block;
+}
+
+div[class^="combo"]:not(.combo-8, .combo-alpha) {
+  margin: 1rem;
+}
+
+.paragrapgh {
+  display: none;
+}
+
+div[class^="combo-"] {
+  transition: border-bottom 200ms ease-out;
+}
+
+div[class^="combo-"]:hover {
+  cursor: pointer;
+  border-bottom: 2px solid blue;
+}
+
+.combo-alpha {
+  margin-right: 4rem;
+}
+
+.combo-7 {
+  transition: all 400ms;
+  transition-delay: 1ms;
+}
+
+.combo-7 .paragragh {
+  transition: all 0 100s;
+}
+
+.combo-7:hover {
+  background: white;
+  color: black;
+  border-radius: 5px;
+}
+
+.combo-7:hover .paragrapgh {
+  position: absolute;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  display: block;
+  width: 60ch;
+}
+
+.aside-tag {
+  display: inline-block;
+  margin-left: 21rem;
+}
+
+.item-1 {
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  background: var(--change-clr);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.combo-8 {
+  margin-left: 6rem;
+}
+
+main {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "html css javascript"
+    "display display display";
+  grid-gap: 1rem;
+
+  color: white;
+  text-align: center;
+
+  top: 6.5rem;
+  bottom: 0;
+  left: 18.5rem;
+  right: 0.5rem;
+  background-image: linear-gradient(0deg, hsl(0 0% 0%), hsl(0 0% 15%));
+}
+
+main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(1rem);
+  background-image: linear-gradient(45deg, blue, red, blue, purple, red);
+  background-size: 400%;
+  width: 100%;
+  height: 100%;
+  background-size: 400%;
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.grid-item {
+  border: 1px solid hsl(0 0% 100%);
+}
+
+.html {
+  grid-area: html;
+}
+
+.css {
+  grid-area: css;
+}
+
+.javascript {
+  grid-area: javascript;
+}
+
+.display {
+  grid-area: display;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
